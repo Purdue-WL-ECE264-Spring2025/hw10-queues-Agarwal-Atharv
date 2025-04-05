@@ -5,7 +5,7 @@
 struct queue *new_queue() {
     struct queue *q = (struct queue *)malloc(sizeof(struct queue));
     if (q) {
-        q->data.head = q->data.tail = NULL;
+        q->data.head = NULL; 
     }
     return q;
 }
@@ -41,7 +41,6 @@ int number_of_moves(struct game_state start) {
 
         struct game_state next_states[4];
         int num_next_states = get_next_states(current, next_states);
-
         for (int i = 0; i < num_next_states; i++) {
             enqueue(q, next_states[i]);
         }
