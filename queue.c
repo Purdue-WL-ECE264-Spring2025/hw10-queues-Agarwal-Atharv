@@ -2,6 +2,10 @@
 #include "tile_game.h"
 #include <stdlib.h>
 
+struct game_state get_goal_state(void);
+bool is_valid_state(const struct game_state *state);
+int get_next_states(struct game_state current, struct game_state next_states[4]);
+
 struct queue *new_queue() {
     struct queue *q = (struct queue *)malloc(sizeof(struct queue));
     if (q) {
