@@ -57,7 +57,7 @@ size_t remove_from_tail(struct linked_list *list) {
     }
 
     struct list_node *current = list->head;
-    while (current->next && current->next->next != NULL) {
+    while (current->next != NULL && current->next->next != NULL) {
         current = current->next;
     }
 
