@@ -53,7 +53,7 @@ int number_of_moves(struct game_state start) {
         struct game_state current = dequeue(q);
 
         if (is_goal_state(current, goal)) {
-            int moves = current.num_moves;
+            int moves = current.num_steps;
             free_queue(q);
             free_list(visited);
             return moves;
